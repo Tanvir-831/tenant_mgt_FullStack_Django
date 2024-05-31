@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb"
+      crossorigin="anonymous"
+    />
+    <title>Tenant Management</title>
+    <style>
+         body {
+             background-color: #f4f4f4;
+         }
+
+         <!--footer-->
+
+         body{
+             line-height: 1.5;
+             font-family: 'Poppins', sans-serif;
+         }
+         *{
+             margin:0;
+             padding:0;
+             box-sizing: border-box;
+         }
+         .container{
+             max-width: 1170px;
+             margin:auto;
+         }
+         .row{
+             display: flex;
+             flex-wrap: wrap;
+         }
+         ul{
+             list-style: none;
+         }
+         .footer{
+             background-color: #24262b;
+             padding: 70px 0;
+         }
+         .footer-col{
+            width: 25%;
+            padding: 0 15px;
+         }
+         .footer-col h4{
+             font-size: 18px;
+             color: #ffffff;
+             text-transform: capitalize;
+             margin-bottom: 35px;
+             font-weight: 500;
+             position: relative;
+         }
+         .footer-col h4::before{
+             content: '';
+             position: absolute;
+             left:0;
+             bottom: -10px;
+             background-color: #e91e63;
+             height: 2px;
+             box-sizing: border-box;
+             width: 50px;
+         }
+         .footer-col ul li:not(:last-child){
+             margin-bottom: 10px;
+         }
+         .footer-col ul li a{
+             font-size: 16px;
+             text-transform: capitalize;
+             color: #ffffff;
+             text-decoration: none;
+             font-weight: 300;
+             color: #bbbbbb;
+             display: block;
+             transition: all 0.3s ease;
+         }
+         .footer-col ul li a:hover{
+             color: #ffffff;
+             padding-left: 8px;
+         }
+         .footer-col .social-links a{
+             display: inline-block;
+             height: 40px;
+             width: 40px;
+             background-color: rgba(255,255,255,0.2);
+             margin:0 10px 10px 0;
+             text-align: center;
+             line-height: 40px;
+             border-radius: 50%;
+             color: #ffffff;
+             transition: all 0.5s ease;
+         }
+         .footer-col .social-links a:hover{
+             color: #24262b;
+             background-color: #ffffff;
+         }
+
+         @media(max-width: 767px){
+           .footer-col{
+             width: 50%;
+             margin-bottom: 30px;
+         }
+         }
+         @media(max-width: 574px){
+           .footer-col{
+             width: 100%;
+         }
+         }
+         <!--about-->
+         <>
+             @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+      .about-area{
+          padding-top: 1%;
+          padding-bottom: 4%;
+      }
+
+
+      .about-text{
+          padding-top: 10%;
+      }
+      .about-text h2{
+          color: black;
+          font-family: 'Poppins', sans-serif;
+          font-size: 50px;
+      }
+      .about-text p{
+          font-family: 'Ubuntu', sans-serif;
+          font-size: 18px;
+          color: black;
+      }
+      .about-text a{
+          background: #b5a7f8;
+          color: #fff;
+          padding: 7px 15px;
+          display: inline-block;
+          margin-top: 20px;
+      }
+
+      body {
+          background-color: #EDEDED !important;
+      }
+
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    </style>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    {% include "tenants/navbar.html" %}
+
+    <div class="container">
+      {% if messages %} {% for message in messages %}
+
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      {% endfor %} {% endif %} {% block content %} {% endblock %}
+
+      <br />
+
+      <hr />
+
+      <br />
+      
+
+      <!--footer-->
+      <div>
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="footer-col">
+                <h4>Managements</h4>
+                <ul>
+                  <li><a href="#">about us</a></li>
+                  <li><a href="#">our services</a></li>
+                  <li><a href="#">privacy policy</a></li>
+                  <li><a href="#">affiliate program</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                  <li><a href="#">FAQ</a></li>
+
+                  <li><a href="#"> status</a></li>
+                  <li><a href="#">payment options</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>See</h4>
+                <ul>
+                  <li><a href="#">Flats</a></li>
+                  <li><a href="#">Plots</a></li>
+                  <li><a href="#">Building</a></li>
+                  <li><a href="#">Area</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>follow us</h4>
+                <div class="social-links">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<strong><nav class="navbar navbar-expand-lg" style="background-color: #d5def5;">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="{% url 'home' %}">Arunapalli</a>
+
+      <div style="display: flex; justify-content: space-around; ">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Flats
+            </a>
+            <ul class="dropdown-menu">
+            {% if not user.is_authenticated %}
+              <li><a class="dropdown-item" href="{% url 'home' %}">Show Flats</a></li>
+            {% endif %}
+
+            {% if user.is_authenticated %}
+              <li><a class="dropdown-item" href="{% url 'my-flats' %}">My Flats</a></li>
+              <li><a class="dropdown-item" href="{% url 'add-flat' %}">Add Flat</a></li>
+            {% endif %}
+            </ul>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Buildings
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'show-buildings' %}">Show Buildings</a></li>
+
+                {% if user.is_authenticated %}
+              <li><a class="dropdown-item" href="{% url 'add-building' %}">Add Building</a></li>
+                {% endif %}
+            </ul>
+          </li>
+
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user-logout' %}">Logout</a>
+          </li>
+          {% if user.is_superuser %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'dash-board' %}">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user-list' %}">Users</a>
+          </li>
+          {% endif %}
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user-login' %}">Login</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user-register' %}">Register</a>
+          </li>
+         
+            {% endif %}
+        </ul>
+
+      </div>
+     
+    </div>
+    <div>
+
+  <div>
+     <form class="d-flex" role="search">
+        <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark " type="submit" style="margin-left: 10px;">Search</button>
+      </form>
+    </div>
+
+  </nav></strong>

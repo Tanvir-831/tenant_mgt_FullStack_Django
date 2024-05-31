@@ -1,0 +1,31 @@
+{% extends "tenants/base.html" %}
+
+
+{% block content %}
+
+{% if form.errors %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    There was an error in the form. Please try again.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+{% endif %}
+
+<Strong>
+<div class="container shadow" style="width: 50%; background-color: #a6b1e1; padding: 30px; margin-top: 20px; ">
+        <h1>Register a new user</h1>
+        <br>
+    
+        <form action="{% url 'user-register' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br>
+            
+          <div style="text-align: center;"> <input type="submit" value="Submit" class="btn btn-success" ></div> 
+        </form>
+        
+      </div></Strong>   
+        
+    
+{% endblock %}

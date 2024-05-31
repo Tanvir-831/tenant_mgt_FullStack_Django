@@ -1,0 +1,23 @@
+{% extends "tenants/base.html" %}
+
+
+{% block content %}
+<div class="container shadow" style="width: 40%; background-color: #a6b1e1; padding: 30px; margin-top: 20px;">
+<strong>
+<h1>Edit Flat Details</h1>
+        
+        
+        <form action="" method="POST">
+
+            {% csrf_token %}
+
+        {{ form.as_p}}
+
+        <br>
+        <button type="submit" value="Update" class="btn btn-secondary">Update</button> 
+
+        </form>
+    </strong>
+    </div>
+
+{% endblock %}

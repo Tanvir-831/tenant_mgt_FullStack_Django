@@ -1,0 +1,44 @@
+{% extends "tenants/base.html" %}
+{% block content %}
+
+<br>
+<br>
+<table class="table table-success table-striped table-bordered">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Building Name:</th>
+        <th scope="col">Flat No:</th>
+        <th scope="col">Owner:</th>
+        <th scope="col">Owner Email: </th>
+        <th scope="col">Tenant: </th>
+        <th scope="col">Bedroom: </th>
+        <th scope="col">Bathroom: </th>
+        <th scope="col">Kitchen: </th>
+        <th scope="col">Balcony:  </th>
+        <th scope="col">Rent:</th>
+        <th scope="col">Activity:</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for flat in flats %}
+      <tr>
+        <td>{{ flat.building }}</td>
+        <td>{{ flat.number }}</td>
+        <td>{{ flat.owner }}</td>
+        <td>{{ flat.owner.email }}</td>
+        <td>{{ flat.tenant }}</td>
+        <td>{{ flat.bedroom }}</td>
+        <td>{{ flat.washroom }}</td>
+        <td>{{ flat.kitchen }}</td>
+        <td>{{ flat.balcony }}</td>
+        <td>{{ flat.rent }}</td>
+        <td>
+          <a href="{% url 'edit-flat' flat.id %}" class="btn btn-primary btn-sm mx-4" style="margin-bottom: 10px;">Edit Flat</a>
+          <a href="{% url 'delete-flat' flat.id %}" class="btn btn-danger btn-sm mx-4">Delete Flat</a>
+        </td>
+        
+      </tr>
+      {% endfor %}   
+    </tbody>
+  </table>
+{% endblock %}

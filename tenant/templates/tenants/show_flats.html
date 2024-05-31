@@ -1,0 +1,44 @@
+{% extends "tenants/base.html" %}
+
+
+{% block content %}
+
+<center>
+
+    <h1>Flats of {{ building.name }}</h1>
+    <br>
+    
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for flat in flats %}
+
+        <div class="col mb-4">
+          <div class="card mb-4 ">
+
+            <img  src="{{ flat.building.building_image.url }}" class="card-img-top " alt="building_image">
+
+            <div class="card-body">
+              <h5 class="card-title">{{ flat.building }}</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Flat No: {{ flat.number }}</li>
+                <li class="list-group-item">Owner: {{ flat.owner }}</li>
+                <li class="list-group-item">Owner Email: {{ flat.owner.email }}</li>
+                <li class="list-group-item">Bedroom: {{ flat.bedroom }}</li>
+                <li class="list-group-item">Bathroom: {{ flat.washroom }}</li>
+                <li class="list-group-item">Kitchen: {{ flat.kitchen }}</li>
+                <li class="list-group-item">Balcony: {{ flat.balcony }}</li>
+                <li class="list-group-item">Rent: {{ flat.rent }} </li>
+                
+            </div>
+
+            <br>
+          </div>
+        </div>
+
+        <br>
+
+        {% endfor %}   
+        
+      </div>
+    
+{% endblock %}

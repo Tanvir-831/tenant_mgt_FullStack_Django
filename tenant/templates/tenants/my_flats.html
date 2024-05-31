@@ -1,0 +1,53 @@
+{% extends "tenants/base.html" %}
+
+
+{% block content %}
+   <br>
+<center>
+    <h1>My Flats</h1>
+</center>
+    <br>
+
+    <hr/>
+    <br>
+    
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for flat in flats %}
+
+        <div class="col">
+          <div class="card">
+
+            <img src="{{ flat.building.building_image.url }}" class="card-img-top" alt="building_image">
+
+            <div class="card-body">
+              <h5 class="card-title">{{ flat.building }}</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Flat No: {{ flat.number }}</li>
+                <li class="list-group-item">Owner: {{ flat.owner }}</li>
+                <li class="list-group-item">Owner Email: {{ flat.owner.email }}</li>
+                <li class="list-group-item">Bedroom: {{ flat.bedroom }}</li>
+                <li class="list-group-item">Bathroom: {{ flat.washroom }}</li>
+                <li class="list-group-item">Kitchen: {{ flat.kitchen }}</li>
+                <li class="list-group-item">Balcony: {{ flat.balcony }}</li>
+                <li class="list-group-item">Rent: {{ flat.rent }} </li>
+                <li class="list-group-item">Tenant: {{ flat.tenant }} </li>
+
+                <div class="card-body">
+                    <a href="{% url 'edit-flat' flat.id %}" class="btn btn-primary btn-sm mx-4">Edit Flat</a>
+                    <a href="{% url 'delete-flat' flat.id %}" class="btn btn-danger btn-sm mx-4">Delete Flat</a>
+                </div>
+                
+            </div>
+
+            <br>
+          </div>
+        </div>
+
+        <br>
+
+        {% endfor %}   
+        
+      </div>
+    
+{% endblock %}

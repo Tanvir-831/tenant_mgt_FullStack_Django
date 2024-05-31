@@ -1,0 +1,27 @@
+{% extends "tenants/base.html" %}
+
+{% block content %}
+<br>
+<br>
+<table class="table table-success table-striped table-bordered">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">User Name:</th>
+        <th scope="col">Email:</th>
+        <th scope="col">Name:</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+      <tr>
+        <td>{{ user.username}}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.first_name }} {{ user.last_name }}</td>
+      </tr>
+      {% endfor %}   
+    </tbody>
+  </table>
+
+
+
+{% endblock %}

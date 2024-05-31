@@ -1,0 +1,38 @@
+{% extends "tenants/base.html" %}
+
+
+{% block content %}
+
+<div style="display: flex; margin-top: 70px; margin-left: 150px;">
+  <div style="width: 50%; background-color:  #dcd6f7;">
+    <div style="width: fit-content; height:fit-content; margin: auto; margin-top: 10%;" >
+      <h2>Welcome to our website</h2>
+      <p>Sign in to access the system.</p>
+      <p>Not registered? <a href="{% url 'user-register' %}"> Sign up</a></p>
+
+    </div>
+  </div>
+
+  <div style="padding: 20px; width: 50%; text-align: center; background-color: #a6b1e1; margin-right: 150px;">
+    <h1>Login</h1>
+    <br>
+    
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+      </div>
+      
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password">
+      </div>
+      
+      <input type="submit" value="Submit" class="btn btn-secondary">
+    </form> 
+    
+  </div>
+</div>
+
+{% endblock %}
