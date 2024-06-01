@@ -1,4 +1,3 @@
-
 # Project Setup Instructions
 
 check python , pip version at command promt
